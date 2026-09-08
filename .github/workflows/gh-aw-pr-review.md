@@ -153,7 +153,7 @@ Leave inline comments (`create_pull_request_review_comment`) per the **Code Revi
 
 ### Step 4: Submit the Review
 
-**Skip if nothing new:** If you left zero inline comments during this review AND your verdict would be the same as the most recent review from this bot (compare against reviews in Step 1), call `noop` with a message like "No new findings — prior review still applies" and stop. Do not submit a redundant review.
+**Skip if nothing new** *(applies only after completing Steps 2 and 3 — do NOT use this as an early exit before reviewing the diff)*: If you completed the review, left zero inline comments, AND your verdict would be the same as the most recent review from this bot (compare against reviews in Step 1), call `noop` with a message like "No new findings — prior review still applies" and stop. Do not submit a redundant review. Seeing many existing threads in Step 1 does not justify skipping Steps 2–3; you must review the current diff before reaching this conclusion.
 
 After all comments are posted, step back and consider the PR as a whole. Call **`submit_pull_request_review`** with:
 - The review type (REQUEST_CHANGES, COMMENT, or APPROVE)
